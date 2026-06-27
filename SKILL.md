@@ -41,6 +41,16 @@ The script generates:
 - `.paper2wechat/<paper_id>/outputs/<paper_id>.coze_material.md`: paste-ready material for Coze.
 - `.paper2wechat/<paper_id>/outputs/<paper_id>.coze_material.coze.md`: expected file path for the Coze returned draft.
 
+After the user manually downloads or copies the Coze result, import it before normalization:
+
+```powershell
+py -3 C:\Users\User\.codex\skills\paper2wechat\scripts\import_coze_draft.py `
+  --material ".paper2wechat\<paper_id>\outputs\<paper_id>.coze_material.md" `
+  --input "C:\path\to\coze_download.md"
+```
+
+If the user copied the Coze article to the clipboard, use `--clipboard` instead of `--input`.
+
 Important rules:
 
 - Coze output is only a first draft. Do not publish it verbatim.
